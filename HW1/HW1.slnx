@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="HW1.Console/HW1.Console.csproj" />
+  <Project Path="HW1.Model/HW1.Model.csproj" />
   <Project Path="HW1.Tests/HW1.Tests.csproj" />
-  <Project Path="HW1/HW1.csproj" />
 </Solution>
