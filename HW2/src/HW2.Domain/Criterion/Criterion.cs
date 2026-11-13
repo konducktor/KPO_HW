@@ -18,8 +18,8 @@ public class Criterion
             );
         MaxScore = maxScore;
 
-        if (maxScore <= 0)
-            throw new ArgumentOutOfRangeException(nameof(maxScore), maxScore,
+        if (weight <= 0)
+            throw new ArgumentOutOfRangeException(nameof(weight), weight,
                 $"Вес оценки {Name} должен быть быть больше 0"
             );
         Weight = weight;

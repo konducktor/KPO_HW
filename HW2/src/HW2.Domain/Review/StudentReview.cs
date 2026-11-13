@@ -1,16 +1,33 @@
+using System.Collections.ObjectModel;
+
 namespace HW2.Domain;
 
 public class StudentReview
 {
-    public Dictionary<CriterionId, Score> Scores { get; }
+    private Dictionary<CriterionId, Score> _scores;
+
+    public ReadOnlyDictionary<CriterionId, Score> Scores { get; }
 
     public StudentReview()
     {
-        Scores = new();
+        _scores = new();
+        Scores = _scores.AsReadOnly();
     }
 
-    public void AddScore(Score score)
+    public void AddScore(Rubricator rubricator, CriterionId id, Points points,
+                         DateTime date, string comment = "")
     {
-        Scores.Add(score.CriterionId, score);
+        ArgumentNullException.ThrowIfNull(rubricator);
+
+        if (!rubricator.Criteria.TryGetValue(id, out Criterion? criterion))
+            throw new InvalidOperationException($"Критерия {id} нет в рубрикаторе");
+
+        _scores[id] = new Score(criterion, points, date, comment);
+    }
+
+    // Я тут перенёс логику Dictionary.Remove, может кому-нибудь сверху пригодится
+    public bool RemoveScore(CriterionId criterionId)
+    {
+        return _scores.Remove(criterionId);
     }
 }

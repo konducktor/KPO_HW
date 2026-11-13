@@ -4,7 +4,7 @@ namespace HW2.Domain;
 
 public class Student
 {
-    public StudentId Id;
+    public StudentId Id { get; }
     public string Name { get; }
     public string Surname { get; }
     public StudentReview StudentReview { get; }

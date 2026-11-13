@@ -11,14 +11,14 @@ public class DomainService
 
     public decimal CalculateCumulativeScore(StudentReview studentReview)
     {
+        if (studentReview.Scores.Count != _rubricator.Criteria.Count)
+            throw new InvalidOperationException(
+                $"Количество оценённых критериев не совпадает с рубрикатором"
+            );
+
         decimal output = 0M;
         foreach (CriterionId criterionId in _rubricator.Criteria.Keys)
         {
-            if (!studentReview.Scores.ContainsKey(criterionId))
-                throw new InvalidOperationException(
-                    $"Не хватает оценки по критерию: {_rubricator.Criteria[criterionId].Name}"
-                );
-            
             Score score = studentReview.Scores[criterionId];
             Criterion criterion = _rubricator.Criteria[criterionId];
 

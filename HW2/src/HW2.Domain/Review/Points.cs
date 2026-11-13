@@ -29,4 +29,6 @@ public readonly record struct Points : IComparable<Points>
     public static bool operator >=(Points a, Points b) => a.Value >= b.Value;
 
     public int CompareTo(Points other) => Value.CompareTo(other.Value);
+
+    public override string ToString() => Value.ToString();
 }

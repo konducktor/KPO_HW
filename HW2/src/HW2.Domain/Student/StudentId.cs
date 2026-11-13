@@ -8,4 +8,6 @@ public readonly record struct StudentId
     {
         Id = id;
     }
+
+    public override string ToString() => Id.ToString();
 }
