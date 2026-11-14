@@ -2,15 +2,15 @@ namespace HW2.Domain;
 
 public class StudentFactory
 {
-    private int _lastUniqueId;
+    private readonly IStudentIdGenerator _idGenerator;
 
-    public StudentFactory()
+    public StudentFactory(IStudentIdGenerator idGenerator)
     {
-        _lastUniqueId = 0;
+        _idGenerator = idGenerator;
     }
 
-    public Student create(string name, string surname)
+    public Student Create(string name, string surname)
     {
-        return new(new StudentId(_lastUniqueId++), name, surname);
+        return new(_idGenerator.Next(), name, surname);
     }
 }

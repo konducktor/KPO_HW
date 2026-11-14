@@ -10,6 +10,11 @@ public class Criterion
     public Criterion(CriterionId id, string name, decimal maxScore, decimal weight)
     {
         Id = id;
+
+        if (name == "")
+            throw new InvalidDataException(
+                $"Имя студенто не должно быть пустым"
+            );
         Name = name;
 
         if (maxScore <= 0)
