@@ -12,13 +12,13 @@ public class Student
         Id = id;
         Review = new();
 
-        if (name == "")
+        if (string.IsNullOrWhiteSpace(name))
             throw new InvalidDataException(
-                $"Имя студенто не должно быть пустым"
+                $"Имя студента не должно быть пустым"
             );
         Name = name;
 
-        if (surname == "")
+        if (string.IsNullOrWhiteSpace(surname))
             throw new InvalidDataException(
                 $"Фамилия не должна быть пустой"
             );

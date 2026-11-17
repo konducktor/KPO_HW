@@ -11,9 +11,9 @@ public class Criterion
     {
         Id = id;
 
-        if (name == "")
-            throw new InvalidDataException(
-                $"Имя студенто не должно быть пустым"
+        if (string.IsNullOrWhiteSpace(name))
+            throw new ArgumentOutOfRangeException(
+                $"Имя критерия не должно быть пустым"
             );
         Name = name;
 

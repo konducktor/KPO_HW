@@ -20,4 +20,13 @@ public class AcademicRecord
 
         students.Add(student);
     }
+
+    public Student GetStudentBy(StudentId id)
+    {
+        Student? student = students.Find(i => i.Id == id);
+        if (student == null)
+            throw new KeyNotFoundException($"Студента с айди {id} нет в ведомости");
+        
+        return student;
+    }
 }

@@ -1,11 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\HW2.Infrastructure\HW2.Infrastructure.csproj" />
+    <ProjectReference Include="..\HW2.Application\HW2.Application.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>

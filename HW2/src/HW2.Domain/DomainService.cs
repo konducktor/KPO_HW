@@ -2,7 +2,7 @@ namespace HW2.Domain;
 
 public class DomainService
 {
-    public decimal CalculateCumulativeScore(StudentReview studentReview, Rubricator _rubricator)
+    public decimal CalculateFinalScore(StudentReview studentReview, Rubricator _rubricator)
     {
         if (studentReview.Scores.Count != _rubricator.Criteria.Count)
             throw new InvalidOperationException(

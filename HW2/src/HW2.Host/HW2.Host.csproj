@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\HW2.Application\HW2.Application.csproj" />
+    <ProjectReference Include="..\HW2.ConsoleUI\HW2.ConsoleUI.csproj" />
+    <ProjectReference Include="..\HW2.Domain\HW2.Domain.csproj" />
+    <ProjectReference Include="..\HW2.Infrastructure\HW2.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.13" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

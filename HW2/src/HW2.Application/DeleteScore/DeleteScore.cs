@@ -13,10 +13,10 @@ public class DeleteScore
 
     public void Execute(StudentId studentId, CriterionId criterionId)
     {
-        Student student = _studentRepository.GetStudentBy(studentId);
+        AcademicRecord record = _studentRepository.Get();
+        Student student = record.GetStudentBy(studentId);
         
         student.Review.RemoveScore(criterionId);
-
-        _studentRepository.Save(student);
+        _studentRepository.Save(record);
     }
 }

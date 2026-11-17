@@ -14,12 +14,14 @@ public class CreateNewCriterion
         _criterionFactory = criterionFactory;
     }
 
-    public void Execute(string name, decimal maxScore, decimal weight)
+    public CriterionId Execute(string name, decimal maxScore, decimal weight)
     {
         Rubricator rubricator = _rubricatorRepository.Get();
-        
-        rubricator.Add(_criterionFactory.Create(name, maxScore, weight));
+        Criterion criterion = _criterionFactory.Create(name, maxScore, weight);
 
+        rubricator.Add(criterion);
         _rubricatorRepository.Save(rubricator);
+
+        return criterion.Id;
     }
 }

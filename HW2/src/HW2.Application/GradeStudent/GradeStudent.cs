@@ -16,11 +16,11 @@ public class GradeStudent
 
     public void Execute(StudentId studentId, CriterionId criterionId, Points points)
     {
-        Student student = _studentRepository.GetStudentBy(studentId);
         Rubricator rubricator = _rubricatorRepository.Get();
+        AcademicRecord record = _studentRepository.Get();
+        Student student = record.GetStudentBy(studentId);
         
         student.Review.AddScore(rubricator, criterionId, points, DateTime.Now);
-
-        _studentRepository.Save(student);
+        _studentRepository.Save(record);
     }
 }

@@ -1,8 +1,10 @@
 <Solution>
   <Folder Name="/src/">
     <Project Path="src/HW2.Application/HW2.Application.csproj" />
-    <Project Path="src/HW2.Console/HW2.Console.csproj" />
+    <Project Path="src/HW2.ConsoleUI/HW2.ConsoleUI.csproj" />
     <Project Path="src/HW2.Domain/HW2.Domain.csproj" />
+    <Project Path="src/HW2.Host/HW2.Host.csproj" />
     <Project Path="src/HW2.Infrastructure/HW2.Infrastructure.csproj" />
+    <Project Path="src/HW2.Tests/HW2.Tests.csproj" />
   </Folder>
 </Solution>

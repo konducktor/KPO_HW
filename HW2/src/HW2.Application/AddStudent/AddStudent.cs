@@ -13,10 +13,14 @@ public class AddStudent
         _studentFactory = studentFactory;
     }
 
-    public void Execute(string name, string surname)
+    public StudentId Execute(string name, string surname)
     {
+        AcademicRecord record = _studentRepository.Get();
         Student student = _studentFactory.Create(name, surname);
-        
-        _studentRepository.Save(student);
+
+        record.AddStudent(student);
+        _studentRepository.Save(record);
+
+        return student.Id;
     }
 }

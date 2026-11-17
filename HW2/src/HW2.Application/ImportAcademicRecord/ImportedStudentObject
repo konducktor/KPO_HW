@@ -1,8 +1,0 @@
-namespace HW2.Application;
-
-public readonly record struct ImportedStudentObject
-{
-    public string Name { get; }
-    public string Surname { get; }
-    public StudentReview Review { get; }
-}
